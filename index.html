@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Halcyonic - VIP Corner</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body class="subpage">
+	
+		<!-- Header -->
+			<div id="header-wrapper">
+				<header id="header" class="container">
+					<div class="row">
+						<div class="12u">
+
+							<!-- Logo -->
+								<h1><a href="index.html" id="logo">Halcyonic</a></h1>
+							
+							<!-- Nav -->
+								<nav id="nav">
+									<a href="index.html">Homepage</a>
+									<a href="index.html">VIP Corner</a>
+									<a href="secret-codes.html">Secret Codes</a>
+								</nav>
+
+						</div>
+					</div>
+				</header>
+			</div>
+
+		<!-- Content -->
+			<div id="content-wrapper">
+				<div id="content">
+					<div class="container">
+						<div class="row">
+							<div class="12u">
+							
+								<!-- Main Content -->
+									<section>
+										<div id="secretCodeForm">
+											<header>
+												<h2 style="text-align: center;">VIP Corner</h2>
+												<h3 style="text-align: center;">Please enter your secret code to unlock secret features.  You will be given a secret code if you have bought 1 or more shares*.</h3>
+												<p style="text-align: center;"><span style="font-size: smaller; font-style: italic;">*From Donald Leung</span></p>
+												<p style="text-align: center;"><span style="font-size: smaller; font-style: italic;">Psst ... the secret features are games!</span></p>
+											</header>
+											<hr />
+											<p>Secret Code: <input type="text" id="secretCode" placeholder="Enter your code here ... " /> <a href="javascript:void(0)" class="button-big" style="font-size: 1em; color: #fff; padding: 5px;" onclick="halcyonic.vip.confirmCode()">Submit Code</a><span id="secretCodeError" style="color: red; display: none;">Please enter a valid code.</span></p>
+										</div>
+										<div class="row" id="oneShare" style="display: none;">
+											<div class="12u">
+												<h2 style="text-align: center;">60-second Multiplication Game</h2>
+											</div>
+											<div class="12u">
+												<p style="text-align: center;"><a id="oneShareStartGame" href="javascript:void(0)" onclick="halcyonic.vip.oneShare.init()" style="font-size: 1em; color: #fff; padding: 5px;" class="button-big">Start Game</a></p>
+											</div>
+											<div class="12u">
+												<p><span id="oneShareCountdownTimer" style="display: none;">Time Remaining: 60 seconds</span></p>
+											</div>
+											<div class="6u" id="oneShareQuestion" style="display: none;">
+												<p><span style="font-size: 3em;"><span id="oneShareNumOne">3</span> &times; <span id="oneShareNumTwo">5</span> = </span></p>
+											</div>
+											<div class="6u" id="oneShareResponse" style="display: none;">
+												<p><input type="text" id="oneShareAnswerBox" /></p>
+											</div>
+											<div class="12u" id="oneShareResults" style="display: none;">
+												<p><span style="font-size: 2em;">You scored <span id="oneShareQuestionsCorrect">x</span> out of <span id="oneShareTotalQuestions">y</span>.  Congratulations!</span></p>
+											</div>
+										</div>
+										<div class="row" id="twoShares" style="display: none;">
+											<div class="12u">
+												<h2 style="text-align: center;">60-second Multiplication Game</h2>
+											</div>
+											<div class="12u" style="text-align: center;">
+												<a href="javascript:void(0)" class="button-big" style="font-size: 1em; color: #fff; padding: 5px;" onclick="halcyonic.vip.twoShares.decreaseDifficulty()" id="twoSharesDecreaseDifficulty">&lt;----</a> <span id="twoSharesDifficulty">Normal</span> <a href="javascript:void(0)" class="button-big" style="font-size: 1em; color: #fff; padding: 5px;" onclick="halcyonic.vip.twoShares.increaseDifficulty()" id="twoSharesIncreaseDifficulty">----&gt;</a>
+											</div>
+											<div class="12u">
+												<p style="text-align: center;"><a id="twoSharesStartGame" href="javascript:void(0)" onclick="halcyonic.vip.twoShares.init()" style="font-size: 1em; color: #fff; padding: 5px;" class="button-big">Start Game</a></p>
+											</div>
+											<div class="12u">
+												<p><span id="twoSharesCountdownTimer" style="display: none;">Time Remaining: 60 seconds</span></p>
+											</div>
+											<div class="6u" id="twoSharesQuestion" style="display: none;">
+												<p><span style="font-size: 3em;"><span id="twoSharesNumOne">3</span> &times; <span id="twoSharesNumTwo">5</span> = </span></p>
+											</div>
+											<div class="6u" id="twoSharesResponse" style="display: none;">
+												<p><input type="text" id="twoSharesAnswerBox" /></p>
+											</div>
+											<div class="12u" id="twoSharesResults" style="display: none;">
+												<p><span style="font-size: 2em;">You scored <span id="twoSharesQuestionsCorrect">x</span> out of <span id="twoSharesTotalQuestions">y</span> in <span id="twoSharesGameMode">Normal</span> mode.  Congratulations!</span></p>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Footer -->
+			<div id="footer-wrapper">
+				<footer id="footer" class="container">
+					<div class="row">
+						<div class="8u">
+						
+							<!-- Links -->
+								<section>
+									<h2>Links to Important Stuff</h2>
+									<div>
+										<div class="row">
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="#">Neque amet dapibus</a></li>
+													<li><a href="#">Sed mattis quis rutrum</a></li>
+													<li><a href="#">Accumsan suspendisse</a></li>
+													<li><a href="#">Eu varius vitae magna</a></li>
+												</ul>
+											</div>
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="#">Neque amet dapibus</a></li>
+													<li><a href="#">Sed mattis quis rutrum</a></li>
+													<li><a href="#">Accumsan suspendisse</a></li>
+													<li><a href="#">Eu varius vitae magna</a></li>
+												</ul>
+											</div>
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="#">Neque amet dapibus</a></li>
+													<li><a href="#">Sed mattis quis rutrum</a></li>
+													<li><a href="#">Accumsan suspendisse</a></li>
+													<li><a href="#">Eu varius vitae magna</a></li>
+												</ul>
+											</div>
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="#">Neque amet dapibus</a></li>
+													<li><a href="#">Sed mattis quis rutrum</a></li>
+													<li><a href="#">Accumsan suspendisse</a></li>
+													<li><a href="#">Eu varius vitae magna</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</section>
+
+						</div>
+						<div class="4u">
+							
+							<!-- Blurb -->
+								<section>
+									<h2>An Informative Text Blurb</h2>
+									<p>
+										Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse eu 
+										varius nibh. Suspendisse vitae magna eget odio amet mollis. Duis neque nisi, 
+										dapibus sed mattis quis, sed rutrum accumsan sed. Suspendisse eu varius nibh 
+										lorem ipsum amet dolor sit amet lorem ipsum consequat gravida justo mollis.
+									</p>
+								</section>
+						
+						</div>
+					</div>
+				</footer>
+			</div>
+
+		<!-- Copyright -->
+			<div id="copyright">
+				&copy; 2015 Donald Leung. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+			</div>
+		<script src="halcyonic.js"></script>
+		<script>
+		halcyonic.init();
+		</script>
+	</body>
+</html>
